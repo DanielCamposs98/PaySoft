@@ -2,9 +2,9 @@ C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\bin\Debug\PaySoft.exe.co
 C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\bin\Debug\PaySoft.exe
 C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\bin\Debug\PaySoft.pdb
 C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.csprojAssemblyReference.cache
-C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.Form1.resources
 C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.Properties.Resources.resources
 C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.csproj.GenerateResource.cache
 C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.csproj.CoreCompileInputs.cache
 C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.exe
 C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.pdb
+C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.Conexion_Manual.resources
