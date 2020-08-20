@@ -13,8 +13,16 @@ CREATE TABLE MESA
 (
 ID_Mesa int IDENTITY (1,1) NOT NULL PRIMARY KEY,
 Nombre VARCHAR(30) NOT NULL,
-Salon int NOT NULL,
+Salon int NOT NULL REFERENCES SALON(ID_Salon) ON DELETE CASCADE,
 Estado_Vida VARCHAR(30),
 Estado_Disponibilidad VARCHAR(30) NULL
 
+)
+
+CREATE TABLE PROPIEDAD_MESA
+(
+id_propiedades int IDENTITY(1,1) primary key,
+x int,
+y int,
+tamano_letra int
 )

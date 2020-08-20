@@ -8,3 +8,5 @@ C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.csproj
 C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.exe
 C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.pdb
 C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.Conexion_Manual.resources
+C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.Modulos.Mesas_Salones.Configurar_Mesas.resources
+C:\Users\Daniel Campos\Documents\GitHub\PaySoft\PaySoft\obj\Debug\PaySoft.Modulos.Mesas_Salones.Configurar_Salones.resources

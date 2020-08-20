@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
@@ -25,15 +26,10 @@ namespace PaySoft.Conexion
             return CnString;
 
         }
-
-        internal class label
-        {
-
-        }
         public static object UsuariosEncryp()
         {
             XmlDocument doc = new XmlDocument();
-            label root = new label();
+            Label root = new Label();
 
             dbcnString = root.ToString();
             CnString = (aes.Decrypt(dbcnString, appPwdUnique, int.Parse("256")));

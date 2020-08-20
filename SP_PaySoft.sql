@@ -38,6 +38,13 @@ GO
 CREATE PROC SP_MostrarMesasSalon
 @ID_Salon int
 AS
-SELECT * FROM MESAS M JOIN SALON S ON S.ID_Salon = M.Salon
+SELECT M.* ,P.* FROM MESA M INNER JOIN SALON S ON S.ID_Salon = M.Salon
+CROSS JOIN PROPIEDAD_MESA P
 WHERE M.Salon = @ID_Salon
 
+GO
+
+CREATE PROC SP_MostrarIdSalonRegistrado
+@salon as VARCHAR(30)
+AS
+SELECT ID_Salon FROM SALON WHERE Nombre= @salon

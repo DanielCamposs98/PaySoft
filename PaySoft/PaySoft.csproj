@@ -49,16 +49,34 @@
     <Compile Include="Conexion\ConexionMaster.cs" />
     <Compile Include="Librerias\Desencryptacion.cs" />
     <Compile Include="Librerias\Encryptacion.cs" />
-    <Compile Include="Conexion_Manual.cs">
+    <Compile Include="Conexion\Conexion_Manual.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Conexion_Manual.Designer.cs">
+    <Compile Include="Conexion\Conexion_Manual.Designer.cs">
       <DependentUpon>Conexion_Manual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Mesas_Salones\Configurar_Mesas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Mesas_Salones\Configurar_Mesas.Designer.cs">
+      <DependentUpon>Configurar_Mesas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modulos\Mesas_Salones\Configurar_Salones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Mesas_Salones\Configurar_Salones.Designer.cs">
+      <DependentUpon>Configurar_Salones.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Conexion_Manual.resx">
+    <EmbeddedResource Include="Conexion\Conexion_Manual.resx">
       <DependentUpon>Conexion_Manual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mesas_Salones\Configurar_Mesas.resx">
+      <DependentUpon>Configurar_Mesas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mesas_Salones\Configurar_Salones.resx">
+      <DependentUpon>Configurar_Salones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -68,6 +86,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -83,7 +102,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Modulos\" />
+    <None Include="Resources\lupa1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mesa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\silla.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\mesa_vacia.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

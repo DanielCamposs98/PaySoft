@@ -3,13 +3,14 @@ using System;
 using System.Windows.Forms;
 using System.Xml;
 using System.Security.Cryptography;
-
+using System.Data.SqlClient;
 namespace PaySoft
 {
     public partial class Conexion_Manual : Form
     {
         private AES aes = new AES();
         private String dbcnString;
+        private int idTabla;
 
         public Conexion_Manual()
         {
@@ -48,7 +49,33 @@ namespace PaySoft
 
         private void btnGenerar_Click(object sender, EventArgs e)
         {
-            SaveToXML(aes.Encrypt(txtCnString.Text, Desencryptacion.appPwdUnique, int.Parse("256")));
+            comprobarConexion();
+        }
+
+        private void comprobarConexion()
+        {
+            SqlConnection conn = new SqlConnection();
+            try
+            {
+               
+                conn.ConnectionString = txtCnString.Text;
+                SqlCommand connStr = new SqlCommand("SELECT * FROM SALON",conn);
+                conn.Open();
+                idTabla = Convert.ToInt32(connStr.ExecuteScalar());                
+                SaveToXML(aes.Encrypt(txtCnString.Text, Desencryptacion.appPwdUnique, int.Parse("256")));
+                MessageBox.Show("Conexión realizada correctamente", "Conexión", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                conn.Close();
+                Application.Exit();
+               
+
+            }
+            catch(Exception e)
+            {
+                MessageBox.Show("Sin Conexión");
+                MessageBox.Show(e.Message);
+                conn.Close();
+                Application.Exit();
+            }
         }
     }
 }
