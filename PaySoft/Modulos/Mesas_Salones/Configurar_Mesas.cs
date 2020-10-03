@@ -9,8 +9,8 @@ namespace PaySoft.Modulos.Mesas_Salones
     public partial class Configurar_Mesas : Form
     {
 
-        private int idSalon;
-        private string estadoSalon;
+        public static int idSalon, idMesa;
+        public static string estadoSalon, nombreMesa;
 
         public Configurar_Mesas()
         {
@@ -111,6 +111,7 @@ namespace PaySoft.Modulos.Mesas_Salones
                         b.Size = new System.Drawing.Size(tamanio);
                         b.BackColor = Color.FromArgb(5, 179, 90);
                         b.Font = new System.Drawing.Font("Microsoft Sans Serif", tamano_letra);
+                       
                         b.FlatStyle = FlatStyle.Flat;
                         b.FlatAppearance.BorderSize = 0;
                         b.ForeColor = Color.WhiteSmoke;
@@ -121,6 +122,8 @@ namespace PaySoft.Modulos.Mesas_Salones
                         panelMesas.Controls.Add(p);
                     }
 
+                    b.Click += new EventHandler(eventoClick);
+                    p.Click += new EventHandler(eventoClickPanel);
                    
                 }
                 Conexion.ConexionMaster.cerrarConexion();
@@ -132,10 +135,34 @@ namespace PaySoft.Modulos.Mesas_Salones
             }
         }
 
+        private void eventoClickPanel(object sender, EventArgs e)
+        {
+          idMesa= Convert.ToInt32(((Panel) sender).Tag);
+          Agregar_Mesa frm = new Agregar_Mesa();
+          frm.FormClosed += new FormClosedEventHandler(ev_actualizarMesas);
+          frm.ShowDialog();
+          
+        }
+
+        private void ev_actualizarMesas(object sender, EventArgs e)
+        {
+            dibujarMesas();
+        }
+
+        private void eventoClick(object sender, EventArgs e)
+        {
+            nombreMesa = ((Button)sender).Text;
+            idMesa = Convert.ToInt32(((Button)sender).Name);
+            Agregar_Mesa frm = new Agregar_Mesa();
+            frm.FormClosed += new FormClosedEventHandler(ev_actualizarMesas);
+            frm.ShowDialog();
+        }
+
         private void ev_salon_button(object sender, EventArgs e)
         {
-            panelBienvenida.Visible = false;
             panelBienvenida.Dock = DockStyle.None;
+            panelBienvenida.Visible = false;
+            panelMesas.BringToFront();
             panelMesas.Visible = true;
             panelMesas.Dock = DockStyle.Fill;
             panelMesas.BackColor = Color.FromArgb(31,31,31);
@@ -181,13 +208,101 @@ namespace PaySoft.Modulos.Mesas_Salones
         private void btnAgregarSalon_Click(object sender, EventArgs e)
         {
             Modulos.Mesas_Salones.Configurar_Salones frm = new Configurar_Salones();
-            frm.FormClosed += new FormClosedEventHandler(frm_FormClosed);
+            frm.FormClosed += new FormClosedEventHandler(ev_actualizaSalones);
             frm.ShowDialog();
         }
 
-        public void frm_FormClosed(Object sender, FormClosedEventArgs e)
+        private void button1_Click(object sender, EventArgs e)
+        {
+            aumentar_Tamanio_Mesa();
+        }
+
+        public void ev_actualizaSalones(Object sender, FormClosedEventArgs e)
         {
             dibujarSalon();
+            
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            disminuye_Tamanio_Mesa();
+        }
+
+        internal void aumentar_Tamanio_Mesa()
+        {
+            try
+            {
+                Conexion.ConexionMaster.abrirConexion();
+                SqlCommand cmd = new SqlCommand("SP_AumentaTamanioMesa",Conexion.ConexionMaster.conectar);
+                cmd.ExecuteNonQuery();
+                Conexion.ConexionMaster.cerrarConexion();
+                dibujarMesas();
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Conexion.ConexionMaster.cerrarConexion();
+            }
+        }
+
+        internal void disminuye_Tamanio_Mesa()
+        {
+            try
+            {
+                Conexion.ConexionMaster.abrirConexion();
+                SqlCommand cmd = new SqlCommand("SP_DisminuyeTamanioMesa", Conexion.ConexionMaster.conectar);
+                cmd.ExecuteNonQuery();
+                Conexion.ConexionMaster.cerrarConexion();
+                dibujarMesas();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Conexion.ConexionMaster.cerrarConexion();
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            aumentar_tamanio_letra();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            disminuir_tamanio_letra();
+        }
+
+        internal void aumentar_tamanio_letra()
+        {
+            try
+            {
+                Conexion.ConexionMaster.abrirConexion();
+                SqlCommand cmd = new SqlCommand("SP_AumentaTamanioLetra", Conexion.ConexionMaster.conectar);
+                cmd.ExecuteNonQuery();
+                Conexion.ConexionMaster.cerrarConexion();
+                dibujarMesas();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Conexion.ConexionMaster.cerrarConexion();
+            }
+        }
+
+        internal void disminuir_tamanio_letra()
+        {
+            try
+            {
+                Conexion.ConexionMaster.abrirConexion();
+                SqlCommand cmd = new SqlCommand("SP_DisminuyeTamanioLetra", Conexion.ConexionMaster.conectar);
+                cmd.ExecuteNonQuery();
+                Conexion.ConexionMaster.cerrarConexion();
+                dibujarMesas();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show(e.Message);
+                Conexion.ConexionMaster.cerrarConexion();
+            }
         }
     }
 }

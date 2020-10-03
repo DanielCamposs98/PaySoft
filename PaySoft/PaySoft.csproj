@@ -55,6 +55,12 @@
     <Compile Include="Conexion\Conexion_Manual.Designer.cs">
       <DependentUpon>Conexion_Manual.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Mesas_Salones\Agregar_Mesa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Mesas_Salones\Agregar_Mesa.Designer.cs">
+      <DependentUpon>Agregar_Mesa.cs</DependentUpon>
+    </Compile>
     <Compile Include="Modulos\Mesas_Salones\Configurar_Mesas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -67,16 +73,28 @@
     <Compile Include="Modulos\Mesas_Salones\Configurar_Salones.Designer.cs">
       <DependentUpon>Configurar_Salones.cs</DependentUpon>
     </Compile>
+    <Compile Include="Modulos\Productos\Productos_Rest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modulos\Productos\Productos_Rest.Designer.cs">
+      <DependentUpon>Productos_Rest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Conexion\Conexion_Manual.resx">
       <DependentUpon>Conexion_Manual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Mesas_Salones\Agregar_Mesa.resx">
+      <DependentUpon>Agregar_Mesa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Mesas_Salones\Configurar_Mesas.resx">
       <DependentUpon>Configurar_Mesas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modulos\Mesas_Salones\Configurar_Salones.resx">
       <DependentUpon>Configurar_Salones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modulos\Productos\Productos_Rest.resx">
+      <DependentUpon>Productos_Rest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -112,6 +130,123 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\mesa_vacia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\accesorio.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\advertencia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\archivos-adjuntos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\boton-de-stop-de-un-reproductor-de-video.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\candado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Candy-Candy-candy-candy-9421203-572-508.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carrito-de-tienda-online.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\carro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerveza.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clip.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\COBROSSSS.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\COBRSSSS.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\config_redentor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\correcto-simbolo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\efectivo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\etiqueta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fecha_derecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fecha_izquierda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gogeta.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\goku.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gokuqueda.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\homero.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_BLACK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\megafono.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menu_BLACK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Menu_redentor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\menuCajas_claro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monedas.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\monster.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\naruto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notificacion_BLACK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notificacion_BLACK2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\notificacion_redentor.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pacman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pasar-al-siguiente.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sakura.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\trofeo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\venta.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

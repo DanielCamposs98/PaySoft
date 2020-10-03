@@ -16,7 +16,7 @@ namespace PaySoft
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Modulos.Mesas_Salones.Configurar_Mesas());
+            Application.Run(new Modulos.Productos.Productos_Rest());
         }
     }
 }
